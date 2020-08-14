@@ -14,17 +14,9 @@
 		position: absolute;
 		top: 7px;
 		right: 18px;
-		font-size: 36px;
 		color: #fff;
-		.nav-icon {
-			height: 4px;
-			width: 20px;
-			background: #fff;
-			margin-top: 5px;
-			&:first-child {
-				margin-top: 0;
-			}
-		}
+		font-family: none;
+		font-size: 36px;
 	}
 	.drawer-content {
 		padding-left: 18px;
