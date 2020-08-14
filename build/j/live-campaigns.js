@@ -1,0 +1,2 @@
+(this.webpackJsonpbluestack=this.webpackJsonpbluestack||[]).push([[0],{38:function(e,a,t){"use strict";t.r(a);var n=t(0),s=t.n(n);a.default=function(e){return s.a.createElement("div",{className:"live-campaigns"},s.a.createElement("div",null,"live -campaigns"))}}}]);
+//# sourceMappingURL=live-campaigns.js.map

@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.app {
+	.main-container,
+	.middle {
+		width: 1077px;
+		margin: auto;
+	}
+
+	.middle {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.header {
+		background: #1f2640;
+		padding: 18px;
+		.logo {
+			img {
+				max-width: 134px;
+				height: 38px;
+			}
+		}
+	}
+
+	.main-container {
+		padding-top: 40px;
+		.campaigns-header {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 48px;
+			line-height: 50px;
+			color: #2b416c;
+		}
+
+		.mobile {
+			display: none;
+		}
+
+		.navigation-tabs {
+			margin-top: 40px;
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.nav-item {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 18px;
+				line-height: 28px;
+				color: #556789;
+				width: 209px;
+				display: inline-block;
+				text-align: center;
+				padding: 11px;
+
+				&.active {
+					font-weight: 500;
+					color: #83a515;
+					border-bottom: solid 4px #83a515;
+				}
+			}
+		}
+
+		.navigations-componenet {
+			margin-top: 39px;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.header {
+			padding: 6px 18px;
+			.logo {
+				margin-top: 5px;
+				img {
+					max-width: 115px;
+				}
+			}
+			.menu-btn {
+				.nav-icon {
+					height: 3px;
+					width: 20px;
+					background: #fff;
+					margin-top: 5px;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+		.main-container,
+		.middle {
+			width: 100%;
+			margin: auto;
+		}
+		.main-container {
+			padding: 18px;
+			.mobile {
+				display: block;
+			}
+			.campaigns-header {
+				font-size: 25px;
+			}
+			.navigation-tabs {
+				display: none;
+			}
+			.desktop {
+				display: none;
+			}
+		}
+	}
+}

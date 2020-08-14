@@ -1,0 +1,25 @@
+{
+  "files": {
+    "live-campaigns.js": "/campaign/j/live-campaigns.js",
+    "live-campaigns.js.map": "/campaign/j/live-campaigns.js.map",
+    "main.css": "/campaign/c/main.css",
+    "main.js": "/campaign/j/main.js",
+    "main.js.map": "/campaign/j/main.js.map",
+    "past-campaigns.js": "/campaign/j/past-campaigns.js",
+    "past-campaigns.js.map": "/campaign/j/past-campaigns.js.map",
+    "upcoming-campaigns.js": "/campaign/j/upcoming-campaigns.js",
+    "upcoming-campaigns.js.map": "/campaign/j/upcoming-campaigns.js.map",
+    "vendors~main.js": "/campaign/j/vendors~main.js",
+    "vendors~main.js.map": "/campaign/j/vendors~main.js.map",
+    "c/main.css.map": "/campaign/c/main.css.map",
+    "index.html": "/campaign/index.html",
+    "j/vendors~main.js.LICENSE.txt": "/campaign/j/vendors~main.js.LICENSE.txt",
+    "precache-manifest.725eedda91360e6b211e35380dbe6f32.js": "/campaign/precache-manifest.725eedda91360e6b211e35380dbe6f32.js",
+    "service-worker.js": "/campaign/service-worker.js"
+  },
+  "entrypoints": [
+    "j/vendors~main.js",
+    "c/main.css",
+    "j/main.js"
+  ]
+}

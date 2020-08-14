@@ -1,0 +1,62 @@
+#drawer.side-drawer {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #1f2640;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 40px;
+
+	.closebtn {
+		position: absolute;
+		top: 7px;
+		right: 18px;
+		font-size: 36px;
+		color: #fff;
+		.nav-icon {
+			height: 4px;
+			width: 20px;
+			background: #fff;
+			margin-top: 5px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	.drawer-content {
+		padding-left: 18px;
+		color: #fff;
+		white-space: nowrap;
+
+		.nav-content {
+			font-size: 18px;
+			margin-top: 20px;
+		}
+
+		.mob-nav-items {
+			.nav-link {
+				text-decoration: none;
+				color: inherit;
+				font-size: 14px;
+			}
+			.mob-nav-item {
+				padding: 10px 0;
+				overflow: hidden;
+				&.active {
+					color: #83a515;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+.drawer-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6);
+}
