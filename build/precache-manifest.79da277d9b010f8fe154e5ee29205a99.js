@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f3a5864fff1a77cdea73",
+    "revision": "cc5b7a47cbdb37c7c019",
     "url": "/campaign/build/c/main.css"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/campaign/build/j/live-campaigns.js"
   },
   {
-    "revision": "f3a5864fff1a77cdea73",
+    "revision": "cc5b7a47cbdb37c7c019",
     "url": "/campaign/build/j/main.js"
   },
   {
