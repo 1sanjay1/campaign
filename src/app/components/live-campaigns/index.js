@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Campaigns from '../campaigns';
+
 const LiveCampaigns = props => {
 	return (
 		<div className='live-campaigns'>
-			<div>live -campaigns</div>
+			<Campaigns />
 		</div>
 	);
 };

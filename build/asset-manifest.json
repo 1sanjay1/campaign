@@ -1,5 +1,6 @@
 {
   "files": {
+    "live-campaigns.css": "/campaign/c/live-campaigns.css",
     "live-campaigns.js": "/campaign/j/live-campaigns.js",
     "live-campaigns.js.map": "/campaign/j/live-campaigns.js.map",
     "main.css": "/campaign/c/main.css",
@@ -11,10 +12,12 @@
     "upcoming-campaigns.js.map": "/campaign/j/upcoming-campaigns.js.map",
     "vendors~main.js": "/campaign/j/vendors~main.js",
     "vendors~main.js.map": "/campaign/j/vendors~main.js.map",
+    "c/live-campaigns.css.map": "/campaign/c/live-campaigns.css.map",
     "c/main.css.map": "/campaign/c/main.css.map",
     "index.html": "/campaign/index.html",
     "j/vendors~main.js.LICENSE.txt": "/campaign/j/vendors~main.js.LICENSE.txt",
-    "precache-manifest.79da277d9b010f8fe154e5ee29205a99.js": "/campaign/precache-manifest.79da277d9b010f8fe154e5ee29205a99.js",
+    "media/campaign.png": "/campaign/media/campaign.977ecf7b.png",
+    "precache-manifest.5ad9c2155dd6bc7e3eb5d8acbdbbe81f.js": "/campaign/precache-manifest.5ad9c2155dd6bc7e3eb5d8acbdbbe81f.js",
     "service-worker.js": "/campaign/service-worker.js"
   },
   "entrypoints": [

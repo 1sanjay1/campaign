@@ -103,7 +103,7 @@ const App = props => {
 						})}
 					</div>
 
-					<div className='navigations-componenet'>
+					<div className='navigations-component'>
 						<Switch>
 							<Route
 								path='/upcoming-campaigns'

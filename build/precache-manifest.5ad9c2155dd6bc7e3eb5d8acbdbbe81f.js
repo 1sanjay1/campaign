@@ -1,6 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cc5b7a47cbdb37c7c019",
+    "revision": "c36705b22a89464a8c40",
+    "url": "/campaign/build/c/live-campaigns.css"
+  },
+  {
+    "revision": "263ac7df1885ed6b97f3",
     "url": "/campaign/build/c/main.css"
   },
   {
@@ -8,27 +12,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/campaign/build/index.html"
   },
   {
-    "revision": "baa3ebb7e36aa45edcc7",
+    "revision": "c36705b22a89464a8c40",
     "url": "/campaign/build/j/live-campaigns.js"
   },
   {
-    "revision": "cc5b7a47cbdb37c7c019",
+    "revision": "263ac7df1885ed6b97f3",
     "url": "/campaign/build/j/main.js"
   },
   {
-    "revision": "eadbb3964f82c4fc4dd5",
+    "revision": "038d3a8cd79acbd5660a",
     "url": "/campaign/build/j/past-campaigns.js"
   },
   {
-    "revision": "cde7aa045c568f580dcf",
+    "revision": "6340589514f25c47271e",
     "url": "/campaign/build/j/upcoming-campaigns.js"
   },
   {
-    "revision": "c2cec4cd225283220c4c",
+    "revision": "df2baa4ace57050bd525",
     "url": "/campaign/build/j/vendors~main.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
     "url": "/campaign/build/j/vendors~main.js.LICENSE.txt"
+  },
+  {
+    "revision": "977ecf7be74437c437106e00ad13f379",
+    "url": "/campaign/build/media/campaign.977ecf7b.png"
   }
 ]);
