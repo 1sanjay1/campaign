@@ -6,22 +6,8 @@ import Provider from '../store/provider';
 import SideDrawer from '../shared/side-drawer';
 import { campaigns } from './utils/constants';
 
-const UpcomingCampaigns = React.lazy(() =>
-	import(
-		/* webpackChunkName: "upcoming-campaigns" */ './components/upcoming-campaigns'
-	)
-);
-
-const LiveCampaigns = React.lazy(() =>
-	import(
-		/* webpackChunkName: "live-campaigns" */ './components/live-campaigns'
-	)
-);
-
-const PastCampaigns = React.lazy(() =>
-	import(
-		/* webpackChunkName: "past-campaigns" */ './components/past-campaigns'
-	)
+const Campaigns = React.lazy(() =>
+	import(/* webpackChunkName: "Campaigns" */ './components/campaigns')
 );
 
 const App = props => {
@@ -106,36 +92,13 @@ const App = props => {
 					<div className='navigations-component'>
 						<Switch>
 							<Route
-								path='/upcoming-campaigns'
-								component={() => (
-									<React.Suspense
-										fallback={<React.Fragment />}
-									>
-										<UpcomingCampaigns />
-									</React.Suspense>
-								)}
-							/>
-
-							<Route
+								path='/*campaigns'
 								exact
-								path='/live-campaigns'
 								component={() => (
 									<React.Suspense
 										fallback={<React.Fragment />}
 									>
-										<LiveCampaigns />
-									</React.Suspense>
-								)}
-							/>
-
-							<Route
-								exact
-								path='/past-campaigns'
-								component={() => (
-									<React.Suspense
-										fallback={<React.Fragment />}
-									>
-										<PastCampaigns />
+										<Campaigns />
 									</React.Suspense>
 								)}
 							/>
