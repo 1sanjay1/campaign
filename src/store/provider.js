@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Context from './context';
+import { campaignsData } from '../app/utils/constants';
+import { formatData } from '../app/utils/helpres';
 
 class Provider extends React.Component {
 	state = {
@@ -8,6 +10,7 @@ class Provider extends React.Component {
 			show: false,
 			children: null,
 		},
+		campaignsData: formatData(campaignsData),
 	};
 
 	toggleModal = ({ show, children }) => {
@@ -18,6 +21,7 @@ class Provider extends React.Component {
 		return (
 			<Context.Provider
 				value={{
+					...this.state,
 					modal: {
 						...this.state.modal,
 						toggle: this.toggleModal,

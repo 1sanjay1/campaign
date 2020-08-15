@@ -7,17 +7,20 @@ import ErrorBoundary from '../../../shared/error-boundary';
 import Pricing from '../pricing';
 import Modal from '../../../shared/modal';
 
-import campaignImage from '../../../resources/images/campaign.png';
 import fileImage from '../../../resources/images/file.png';
 import reportImage from '../../../resources/images/report.png';
 import calendarImage from '../../../resources/images/calendar.png';
 
 const Campaigns = props => {
+	console.log(props);
 	return (
 		<ErrorBoundary>
 			<Context.Consumer>
 				{context => {
-					const { modal } = context;
+					const { modal, campaignsData = {} } = context;
+
+					const data =
+						campaignsData[props.location.pathname.replace('/', '')];
 
 					return (
 						<React.Fragment>
@@ -37,107 +40,109 @@ const Campaigns = props => {
 									</div>
 								</div>
 								<div className='campaigns-list'>
-									{[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(
-										(campaign, idx) => {
-											return (
-												<div
-													className='campaigns-list-item'
-													key={idx}
-												>
-													<div className='item flex1'>
-														<div className='campaign-date'>
-															<div className='camp-date'>
-																Oct 2019, 28
-															</div>
-															<div className='camp-days'>
-																5 Days Ago
-															</div>
+									{data.map((campaign, idx) => {
+										const {
+											name,
+											region,
+											price,
+											image_url,
+										} = campaign;
+
+										return (
+											<div
+												className='campaigns-list-item'
+												key={idx}
+											>
+												<div className='item flex1'>
+													<div className='campaign-date'>
+														<div className='camp-date'>
+															Oct 2019, 28
+														</div>
+														<div className='camp-days'>
+															5 Days Ago
 														</div>
 													</div>
-													<div className='item flex2'>
-														<div className='campaign-info'>
-															<div className='campaign-img'>
-																<img
-																	src={
-																		campaignImage
-																	}
-																	alt='campaign'
-																/>
-															</div>
-															<div className='campaign-name-countary'>
-																<div className='campaign-name'>
-																	Auto Chess
-																</div>
-																<div className='campaign-countary'>
-																	US
-																</div>
-															</div>
+												</div>
+												<div className='item flex2'>
+													<div className='campaign-info'>
+														<div className='campaign-img'>
+															<img
+																src={image_url}
+																alt='campaign'
+															/>
 														</div>
-													</div>
-													<div className='item flex3'>
-														<div
-															className='campaign-view'
-															onClick={() =>
-																modal.toggle({
-																	show: true,
-																	children: (
-																		<Pricing />
-																	),
-																})
-															}
-														>
-															<div className='currency'>
-																$
+														<div className='campaign-name-countary'>
+															<div className='campaign-name'>
+																{name}
 															</div>
-															<div className='price'>
-																<span>
-																	View Pricing
-																</span>
-															</div>
-														</div>
-													</div>
-													<div className='item flex4'>
-														<div className='campaign-actions'>
-															<div className='campaign-csv'>
-																<img
-																	src={
-																		fileImage
-																	}
-																	alt='file'
-																/>
-																<span className='text'>
-																	CSV
-																</span>
-															</div>
-															<div className='campaign-report'>
-																<img
-																	src={
-																		reportImage
-																	}
-																	alt='file'
-																/>
-																<span className='text'>
-																	Report
-																</span>
-															</div>
-															<div className='campaign-schedule'>
-																<img
-																	src={
-																		calendarImage
-																	}
-																	alt='file'
-																/>
-																<span className='text'>
-																	Schedule
-																	Again
-																</span>
+															<div className='campaign-countary'>
+																{region}
 															</div>
 														</div>
 													</div>
 												</div>
-											);
-										}
-									)}
+												<div className='item flex3'>
+													<div
+														className='campaign-view'
+														onClick={() =>
+															modal.toggle({
+																show: true,
+																children: (
+																	<Pricing
+																		{...campaign}
+																	/>
+																),
+															})
+														}
+													>
+														<div className='currency'>
+															$
+														</div>
+														<div className='price'>
+															<span>
+																View Pricing
+															</span>
+														</div>
+													</div>
+												</div>
+												<div className='item flex4'>
+													<div className='campaign-actions'>
+														<div className='campaign-csv'>
+															<img
+																src={fileImage}
+																alt='file'
+															/>
+															<span className='text'>
+																CSV
+															</span>
+														</div>
+														<div className='campaign-report'>
+															<img
+																src={
+																	reportImage
+																}
+																alt='file'
+															/>
+															<span className='text'>
+																Report
+															</span>
+														</div>
+														<div className='campaign-schedule'>
+															<img
+																src={
+																	calendarImage
+																}
+																alt='file'
+															/>
+															<span className='text'>
+																Schedule Again
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										);
+									})}
 								</div>
 							</div>
 						</React.Fragment>

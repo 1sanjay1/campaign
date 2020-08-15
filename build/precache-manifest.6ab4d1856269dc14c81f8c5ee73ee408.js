@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c01f035331a97233fd2",
+    "revision": "fa88284c6f44e4e54e14",
     "url": "/campaign/build/c/Campaigns.css"
   },
   {
-    "revision": "8968cfa715fb59d90dc7",
+    "revision": "aa21ca2438edad773e76",
     "url": "/campaign/build/c/main.css"
   },
   {
@@ -12,27 +12,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/campaign/build/index.html"
   },
   {
-    "revision": "2c01f035331a97233fd2",
+    "revision": "fa88284c6f44e4e54e14",
     "url": "/campaign/build/j/Campaigns.js"
   },
   {
-    "revision": "8968cfa715fb59d90dc7",
+    "revision": "aa21ca2438edad773e76",
     "url": "/campaign/build/j/main.js"
   },
   {
-    "revision": "d1d99b8a8b784819ef93",
+    "revision": "35bac3f14f03702b0909",
     "url": "/campaign/build/j/vendors~main.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
     "url": "/campaign/build/j/vendors~main.js.LICENSE.txt"
-  },
-  {
-    "revision": "977ecf7be74437c437106e00ad13f379",
-    "url": "/campaign/build/media/campaign.977ecf7b.png"
-  },
-  {
-    "revision": "e9e654dc3e9a710d75fa48507ee9763b",
-    "url": "/campaign/build/media/pubg.e9e654dc.png"
   }
 ]);

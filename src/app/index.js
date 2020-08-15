@@ -98,7 +98,7 @@ const App = props => {
 									<React.Suspense
 										fallback={<React.Fragment />}
 									>
-										<Campaigns />
+										<Campaigns {...props} />
 									</React.Suspense>
 								)}
 							/>

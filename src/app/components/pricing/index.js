@@ -1,36 +1,32 @@
 import React from 'react';
 
 import './pricing.scss';
-import pubgImage from '../../../resources/images/pubg.png';
 
 const Pricing = props => {
+	const { name, region, price = {}, image_url } = props;
 	return (
 		<div className='pricing'>
 			<div className='pricing-content'>
 				<div className='pricing-header'>
 					<div className='game-image'>
-						<img src={pubgImage} alt='pubg' />
+						<img src={image_url} alt='pubg' />
 					</div>
 					<div className='game-info'>
-						<div className='game-name'>pubg mobile</div>
-						<div className='country'>us</div>
+						<div className='game-name'>{name}</div>
+						<div className='country'>{region}</div>
 					</div>
 				</div>
 				<div className='pricing-body'>
 					<div className='pricing-text'>Pricing</div>
 					<div className='packages'>
-						<div className='package'>
-							<div className='duration'>1 Week - 1 Month</div>
-							<div className='price'>$ 100.00</div>
-						</div>
-						<div className='package'>
-							<div className='duration'>6 Months</div>
-							<div className='price'>$ 500.00</div>
-						</div>
-						<div className='package'>
-							<div className='duration'>1 Year</div>
-							<div className='price'>$ 900.00</div>
-						</div>
+						{price.packages.map((p, idx) => {
+							return (
+								<div className='package' key={idx}>
+									<div className='duration'>{p.duration}</div>
+									<div className='price'>{p.amount}</div>
+								</div>
+							);
+						})}
 					</div>
 				</div>
 				<div className='pricing-footer'>
