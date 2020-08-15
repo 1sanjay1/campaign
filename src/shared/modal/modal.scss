@@ -1,0 +1,25 @@
+#root.fixed {
+	position: fixed !important;
+	overflow: scroll !important;
+	width: 100%;
+}
+
+.modal-container {
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	.modal-content {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 400px;
+		background: #fff;
+	}
+}

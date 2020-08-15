@@ -2,6 +2,8 @@ import React from 'react';
 
 import './campaigns.scss';
 import ErrorBoundary from '../../../shared/error-boundary';
+import Pricing from '../pricing';
+
 import campaignImage from '../../../resources/images/campaign.png';
 import fileImage from '../../../resources/images/file.png';
 import reportImage from '../../../resources/images/report.png';
@@ -53,10 +55,12 @@ const Campaigns = props => {
 								</div>
 								<div className='item flex3'>
 									<div className='campaign-view'>
-										<div className='currency'>$</div>
-										<div className='price'>
-											View Pricing
-										</div>
+										<Pricing>
+											<div className='currency'>$</div>
+											<div className='price'>
+												<span>View Pricing</span>
+											</div>
+										</Pricing>
 									</div>
 								</div>
 								<div className='item flex4'>

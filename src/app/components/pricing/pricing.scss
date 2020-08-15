@@ -1,0 +1,99 @@
+.pricing {
+	.pricing-children {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.pricing-content {
+		padding: 20px;
+
+		.pricing-header {
+			display: flex;
+		}
+
+		.game-image {
+			img {
+				width: 137px;
+				height: 137px;
+				transform: translateX(-12px);
+			}
+		}
+
+		.game-info {
+			text-transform: uppercase;
+			.game-name {
+				font-style: normal;
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 19px;
+				color: #2b416c;
+			}
+			.country {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 16px;
+				color: #9ca2b7;
+				margin-top: 14px;
+			}
+		}
+
+		.pricing-body {
+			.pricing-text {
+				font-style: normal;
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 32px;
+				color: #2b416c;
+				margin-top: 30px;
+			}
+			.packages {
+				margin-top: 17px;
+				.package {
+					margin-bottom: 20px;
+					display: flex;
+					justify-content: space-between;
+					.duration {
+						font-style: normal;
+						font-weight: normal;
+						font-size: 16px;
+						line-height: 24px;
+						color: #7788a3;
+					}
+					.price {
+						font-style: normal;
+						font-weight: bold;
+						font-size: 16px;
+						line-height: 24px;
+						color: #556789;
+					}
+				}
+			}
+		}
+
+		.pricing-footer {
+			display: flex;
+			justify-content: center;
+			.pricing-footer-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				border: 2px solid #181b34;
+				width: 84px;
+				height: 48px;
+				cursor: pointer;
+			}
+
+			.pricing-footer-text {
+				font-style: normal;
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 19px;
+				text-align: center;
+				color: #181b34;
+			}
+		}
+	}
+}

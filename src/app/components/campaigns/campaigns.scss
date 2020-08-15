@@ -80,8 +80,6 @@
 			}
 
 			.campaign-view {
-				display: flex;
-				align-items: center;
 				.currency {
 					height: 24px;
 					width: 24px;
@@ -109,6 +107,7 @@
 				.campaign-schedule {
 					display: flex;
 					align-items: center;
+					cursor: pointer;
 					img {
 						width: 18px;
 						height: 24px;
