@@ -80,6 +80,9 @@
 			}
 
 			.campaign-view {
+				display: inline-flex;
+				align-items: center;
+				cursor: pointer;
 				.currency {
 					height: 24px;
 					width: 24px;

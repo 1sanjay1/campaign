@@ -1,10 +1,4 @@
 .pricing {
-	.pricing-children {
-		display: inline-flex;
-		align-items: center;
-		cursor: pointer;
-	}
-
 	.pricing-content {
 		padding: 20px;
 
@@ -93,6 +87,25 @@
 				line-height: 19px;
 				text-align: center;
 				color: #181b34;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.pricing-content {
+			padding-top: 40px;
+			.pricing-footer {
+				display: none;
+			}
+
+			.pricing-mob-btn {
+				position: absolute;
+				top: 5px;
+				right: 20px;
+				.pricing-mob-icon {
+					font-family: none;
+					font-size: 36px;
+				}
 			}
 		}
 	}

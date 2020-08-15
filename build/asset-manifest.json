@@ -13,7 +13,8 @@
     "index.html": "/campaign/index.html",
     "j/vendors~main.js.LICENSE.txt": "/campaign/j/vendors~main.js.LICENSE.txt",
     "media/campaign.png": "/campaign/media/campaign.977ecf7b.png",
-    "precache-manifest.f4f5d560c86f8ca800f82713ee894ae4.js": "/campaign/precache-manifest.f4f5d560c86f8ca800f82713ee894ae4.js",
+    "media/pubg.png": "/campaign/media/pubg.e9e654dc.png",
+    "precache-manifest.ece9df8876651822950fb630cc769015.js": "/campaign/precache-manifest.ece9df8876651822950fb630cc769015.js",
     "service-worker.js": "/campaign/service-worker.js"
   },
   "entrypoints": [

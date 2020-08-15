@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import './modal.scss';
 
 const Modal = props => {
+	const modalContentRef = useRef(null);
+
 	useEffect(() => {
 		open();
 		// eslint-disable-next-line
@@ -12,7 +14,20 @@ const Modal = props => {
 		if (typeof props.onClose === 'function') {
 			props.onClose();
 		}
-		document.getElementById('root').classList.remove('fixed');
+
+		if (modalContentRef) {
+			modalContentRef.current.classList.add('remove');
+		}
+
+		setTimeout(() => {
+			if (typeof props.toggle == 'function') {
+				props.toggle({
+					show: false,
+					children: null,
+				});
+			}
+			document.getElementById('root').classList.remove('fixed');
+		}, 500);
 	};
 
 	const open = () => {
@@ -36,7 +51,9 @@ const Modal = props => {
 	return (
 		<div className='modal-container' onClick={clickHandler}>
 			<div className='modal-overlay'></div>
-			<div className='modal-content'>{props.children}</div>
+			<div className='modal-content' ref={modalContentRef}>
+				{props.children}
+			</div>
 		</div>
 	);
 };

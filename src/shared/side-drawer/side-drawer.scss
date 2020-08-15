@@ -9,6 +9,7 @@
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 40px;
+	z-index: 99;
 
 	.closebtn {
 		position: absolute;
@@ -51,4 +52,5 @@
 	height: 100%;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.6);
+	z-index: 9;
 }
