@@ -48,10 +48,12 @@ const App = props => {
 				<header className='header'>
 					<div className='middle'>
 						<div className='logo'>
-							<img
-								src='https://cdn-www.bluestacks.com/bs-images/bs-logo-new.png'
-								alt='bluestacks'
-							/>
+							<Link to='/campaign'>
+								<img
+									src='https://cdn-www.bluestacks.com/bs-images/bs-logo-new.png'
+									alt='bluestacks'
+								/>
+							</Link>
 						</div>
 						<div
 							className='menu-btn'

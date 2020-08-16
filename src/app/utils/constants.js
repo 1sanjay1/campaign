@@ -173,4 +173,114 @@ export const campaignsData = [
 		image_url:
 			'https://cdn-www.bluestacks.com/bs-images/d92eba592b70acb618c85848157324f8.png',
 	},
+	{
+		id: '106',
+		name: 'Call Of Duty',
+		region: 'JP',
+		createdOn: 1559806680124,
+		startAt: new Date('2020-08-18').valueOf(),
+		endAt: new Date('2020-08-19').valueOf(),
+		price: {
+			packages: [
+				{
+					duration: '1 Week - 1 Month',
+					amount: '$ 100.00',
+				},
+				{
+					duration: '6 Months',
+					amount: '$ 500.00',
+				},
+				{
+					duration: '1 Year',
+					amount: '$ 900.00',
+				},
+			],
+		},
+		csv: 'Some CSV link for Mancala Mix',
+		report: 'Some report link for Mancala Mix',
+		image_url:
+			'https://cdn-www.bluestacks.com/bs-images/Call-Of-Duty_EN11.jpg',
+	},
+	{
+		id: '107',
+		name: 'Days of Empire',
+		region: 'JP',
+		createdOn: 1559806680124,
+		startAt: new Date('2020-08-19').valueOf(),
+		endAt: new Date('2020-08-20').valueOf(),
+		price: {
+			packages: [
+				{
+					duration: '1 Week - 1 Month',
+					amount: '$ 100.00',
+				},
+				{
+					duration: '6 Months',
+					amount: '$ 500.00',
+				},
+				{
+					duration: '1 Year',
+					amount: '$ 900.00',
+				},
+			],
+		},
+		csv: 'Some CSV link for Mancala Mix',
+		report: 'Some report link for Mancala Mix',
+		image_url:
+			'https://cdn-www.bluestacks.com/bs-images/and.onemt_.boe_.tr_.jpg',
+	},
+	{
+		id: '108',
+		name: 'Raid Shadow Legends',
+		region: 'JP',
+		createdOn: 1559806680124,
+		startAt: new Date('2020-08-23').valueOf(),
+		endAt: new Date('2020-08-25').valueOf(),
+		price: {
+			packages: [
+				{
+					duration: '1 Week - 1 Month',
+					amount: '$ 100.00',
+				},
+				{
+					duration: '6 Months',
+					amount: '$ 500.00',
+				},
+				{
+					duration: '1 Year',
+					amount: '$ 900.00',
+				},
+			],
+		},
+		csv: 'Some CSV link for Mancala Mix',
+		report: 'Some report link for Mancala Mix',
+		image_url: 'https://cdn-www.bluestacks.com/bs-images/Raid31.jpg',
+	},
+	{
+		id: '108',
+		name: 'Marvel DUEL',
+		region: 'US',
+		createdOn: 1559806680124,
+		startAt: new Date('2020-08-14').valueOf(),
+		endAt: new Date('2020-08-25').valueOf(),
+		price: {
+			packages: [
+				{
+					duration: '1 Week - 1 Month',
+					amount: '$ 100.00',
+				},
+				{
+					duration: '6 Months',
+					amount: '$ 500.00',
+				},
+				{
+					duration: '1 Year',
+					amount: '$ 900.00',
+				},
+			],
+		},
+		csv: 'Some CSV link for Mancala Mix',
+		report: 'Some report link for Mancala Mix',
+		image_url: 'https://cdn-www.bluestacks.com/bs-images/com.netease.mduelna.jpg',
+	},
 ];

@@ -16,7 +16,7 @@ export const formatData = data => {
 	const startDay = new Date().setHours(0, 0, 0, 0);
 
 	data.forEach(campaign => {
-		if (startDay <= campaign.startAt && campaign.startAt <= endDay) {
+		if (campaign.startAt <= today && today <= campaign.endAt) {
 			live.push(campaign);
 		} else if (campaign.startAt > today) {
 			upcoming.push(campaign);
@@ -93,7 +93,7 @@ export const formatDays = (startAt, endAt) => {
 	const d = new Date().valueOf();
 
 	if (startAt <= d && d <= endAt) {
-		return 'Today';
+		return 'Live';
 	}
 
 	const diff = Math.abs(startAt - d);
