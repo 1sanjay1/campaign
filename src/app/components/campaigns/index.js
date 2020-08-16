@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import Context from '../../../store/context';
 
@@ -6,18 +7,34 @@ import './campaigns.scss';
 import ErrorBoundary from '../../../shared/error-boundary';
 import Pricing from '../pricing';
 import Modal from '../../../shared/modal';
+import { formatDate, formatDays } from '../../utils/helpres';
 
 import fileImage from '../../../resources/images/file.png';
 import reportImage from '../../../resources/images/report.png';
 import calendarImage from '../../../resources/images/calendar.png';
 
+const DatePicker = React.lazy(() =>
+	import(/* webpackChunkName: "react-datepicker" */ 'react-datepicker')
+);
+
 const Campaigns = props => {
-	console.log(props);
+	const [toggleDatePicker, setToggleDatePicker] = useState({});
+
+	const onClickOutsideHandler = id => {
+		setToggleDatePicker({
+			[id]: false,
+		});
+	};
+
 	return (
 		<ErrorBoundary>
 			<Context.Consumer>
 				{context => {
-					const { modal, campaignsData = {} } = context;
+					const {
+						modal,
+						campaignsData = {},
+						updateCampaign,
+					} = context;
 
 					const data =
 						campaignsData[props.location.pathname.replace('/', '')];
@@ -44,8 +61,9 @@ const Campaigns = props => {
 										const {
 											name,
 											region,
-											price,
 											image_url,
+											startAt,
+											endAt,
 										} = campaign;
 
 										return (
@@ -56,10 +74,15 @@ const Campaigns = props => {
 												<div className='item flex1'>
 													<div className='campaign-date'>
 														<div className='camp-date'>
-															Oct 2019, 28
+															{formatDate(
+																startAt
+															)}
 														</div>
 														<div className='camp-days'>
-															5 Days Ago
+															{formatDays(
+																startAt,
+																endAt
+															)}
 														</div>
 													</div>
 												</div>
@@ -75,6 +98,7 @@ const Campaigns = props => {
 															<div className='campaign-name'>
 																{name}
 															</div>
+
 															<div className='campaign-countary'>
 																{region}
 															</div>
@@ -127,7 +151,16 @@ const Campaigns = props => {
 																Report
 															</span>
 														</div>
-														<div className='campaign-schedule'>
+														<div
+															className='campaign-schedule'
+															onClick={() => {
+																setToggleDatePicker(
+																	{
+																		[idx]: true,
+																	}
+																);
+															}}
+														>
 															<img
 																src={
 																	calendarImage
@@ -137,6 +170,40 @@ const Campaigns = props => {
 															<span className='text'>
 																Schedule Again
 															</span>
+															<React.Suspense
+																fallback={
+																	<React.Fragment />
+																}
+															>
+																<DatePicker
+																	selected={
+																		startAt
+																	}
+																	open={
+																		toggleDatePicker[
+																			idx
+																		]
+																	}
+																	onChange={(
+																		date,
+																		e
+																	) => {
+																		updateCampaign(
+																			{
+																				...campaign,
+																				startAt: new Date(
+																					date
+																				).valueOf(),
+																			}
+																		);
+																	}}
+																	onClickOutside={() =>
+																		onClickOutsideHandler(
+																			idx
+																		)
+																	}
+																/>
+															</React.Suspense>
 														</div>
 													</div>
 												</div>

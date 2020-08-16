@@ -177,5 +177,36 @@
 				}
 			}
 		}
+		.react-datepicker-popper {
+			margin-top: 0 !important;
+			left: 50% !important;
+			top: 50% !important;
+			transform: translate(-50%, -50%) !important;
+			.react-datepicker {
+				.react-datepicker__triangle {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 601px) {
+		.react-datepicker-popper {
+			left: -13% !important;
+
+			.react-datepicker {
+				.react-datepicker__triangle {
+					left: 80% !important;
+				}
+			}
+		}
+	}
+
+	.react-datepicker-wrapper {
+		input {
+			height: 0 !important;
+			width: 0 !important;
+			border: 0 !important;
+		}
 	}
 }

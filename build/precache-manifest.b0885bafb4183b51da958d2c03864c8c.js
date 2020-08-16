@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa88284c6f44e4e54e14",
+    "revision": "68745c2cfe06427d6213",
     "url": "/campaign/build/c/Campaigns.css"
   },
   {
-    "revision": "aa21ca2438edad773e76",
+    "revision": "016de844c5dff88a597b",
     "url": "/campaign/build/c/main.css"
   },
   {
@@ -12,19 +12,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/campaign/build/index.html"
   },
   {
-    "revision": "fa88284c6f44e4e54e14",
+    "revision": "68745c2cfe06427d6213",
     "url": "/campaign/build/j/Campaigns.js"
   },
   {
-    "revision": "aa21ca2438edad773e76",
+    "revision": "016de844c5dff88a597b",
     "url": "/campaign/build/j/main.js"
   },
   {
-    "revision": "35bac3f14f03702b0909",
+    "revision": "0a0eff285a760576fa76",
     "url": "/campaign/build/j/vendors~main.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
     "url": "/campaign/build/j/vendors~main.js.LICENSE.txt"
+  },
+  {
+    "revision": "fe1ab9466ff906d5c0a4",
+    "url": "/campaign/build/j/vendors~react-datepicker.js"
+  },
+  {
+    "revision": "6667dc153edcbe95e8723d6c8f6541e2",
+    "url": "/campaign/build/j/vendors~react-datepicker.js.LICENSE.txt"
   }
 ]);
