@@ -4,7 +4,9 @@ import './side-drawer.scss';
 
 const SideDrawer = props => {
 	useEffect(() => {
-		openNav();
+		setTimeout(() => {
+			openNav();
+		}, 0);
 	}, []);
 
 	const drawerRef = useRef(null);

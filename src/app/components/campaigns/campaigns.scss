@@ -154,7 +154,7 @@
 				&.flex1 {
 					order: 2;
 					text-align: right;
-					transform: translateY(-48px);
+					transform: translateY(-44px);
 				}
 				&.flex2 {
 					order: 1;
@@ -182,6 +182,7 @@
 			left: 50% !important;
 			top: 50% !important;
 			transform: translate(-50%, -50%) !important;
+			z-index: 99;
 			.react-datepicker {
 				.react-datepicker__triangle {
 					display: none;

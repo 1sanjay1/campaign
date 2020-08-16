@@ -257,7 +257,7 @@ export const campaignsData = [
 		image_url: 'https://cdn-www.bluestacks.com/bs-images/Raid31.jpg',
 	},
 	{
-		id: '108',
+		id: '109',
 		name: 'Marvel DUEL',
 		region: 'US',
 		createdOn: 1559806680124,

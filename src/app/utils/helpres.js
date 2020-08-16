@@ -12,8 +12,6 @@ export const formatData = data => {
 	const past = [];
 
 	const today = new Date().valueOf();
-	const endDay = new Date().setHours(23, 59, 59, 0);
-	const startDay = new Date().setHours(0, 0, 0, 0);
 
 	data.forEach(campaign => {
 		if (campaign.startAt <= today && today <= campaign.endAt) {

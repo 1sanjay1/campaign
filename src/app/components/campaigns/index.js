@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import Context from '../../../store/context';
@@ -7,34 +7,19 @@ import './campaigns.scss';
 import ErrorBoundary from '../../../shared/error-boundary';
 import Pricing from '../pricing';
 import Modal from '../../../shared/modal';
+import DatePicker from '../date-picker';
 import { formatDate, formatDays } from '../../utils/helpres';
 
 import fileImage from '../../../resources/images/file.png';
 import reportImage from '../../../resources/images/report.png';
 import calendarImage from '../../../resources/images/calendar.png';
 
-const DatePicker = React.lazy(() =>
-	import(/* webpackChunkName: "react-datepicker" */ 'react-datepicker')
-);
-
 const Campaigns = props => {
-	const [toggleDatePicker, setToggleDatePicker] = useState({});
-
-	const onClickOutsideHandler = id => {
-		setToggleDatePicker({
-			[id]: false,
-		});
-	};
-
 	return (
 		<ErrorBoundary>
 			<Context.Consumer>
 				{context => {
-					const {
-						modal,
-						campaignsData = {},
-						updateCampaign,
-					} = context;
+					const { modal, campaignsData = {} } = context;
 
 					const data =
 						campaignsData[props.location.pathname.replace('/', '')];
@@ -57,8 +42,9 @@ const Campaigns = props => {
 									</div>
 								</div>
 								<div className='campaigns-list'>
-									{data.map((campaign, idx) => {
+									{data.map(campaign => {
 										const {
+											id,
 											name,
 											region,
 											image_url,
@@ -69,7 +55,7 @@ const Campaigns = props => {
 										return (
 											<div
 												className='campaigns-list-item'
-												key={idx}
+												key={id}
 											>
 												<div className='item flex1'>
 													<div className='campaign-date'>
@@ -151,59 +137,23 @@ const Campaigns = props => {
 																Report
 															</span>
 														</div>
-														<div
-															className='campaign-schedule'
-															onClick={() => {
-																setToggleDatePicker(
-																	{
-																		[idx]: true,
-																	}
-																);
-															}}
-														>
-															<img
-																src={
-																	calendarImage
-																}
-																alt='file'
-															/>
-															<span className='text'>
-																Schedule Again
-															</span>
-															<React.Suspense
-																fallback={
-																	<React.Fragment />
+														<div className='campaign-schedule'>
+															<DatePicker
+																campaign={
+																	campaign
 																}
 															>
-																<DatePicker
-																	selected={
-																		startAt
+																<img
+																	src={
+																		calendarImage
 																	}
-																	open={
-																		toggleDatePicker[
-																			idx
-																		]
-																	}
-																	onChange={(
-																		date,
-																		e
-																	) => {
-																		updateCampaign(
-																			{
-																				...campaign,
-																				startAt: new Date(
-																					date
-																				).valueOf(),
-																			}
-																		);
-																	}}
-																	onClickOutside={() =>
-																		onClickOutsideHandler(
-																			idx
-																		)
-																	}
+																	alt='file'
 																/>
-															</React.Suspense>
+																<span className='text'>
+																	Schedule
+																	Again
+																</span>
+															</DatePicker>
 														</div>
 													</div>
 												</div>
