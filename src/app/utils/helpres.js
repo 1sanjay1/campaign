@@ -1,10 +1,38 @@
 import localStorage from './localStorage';
-
 import { campaignsData } from './constants';
 
+/**
+ * This function produces a random number between max and min value
+ *
+ * @param {number} min [holds minimum value]
+ * @param {number} max [holds maximum value]
+ * @returns {number}
+ */
+export function random(min = 100, max = 10000) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * returns a dynamic timestamp to generate dynamic date.
+ *
+ * @param {number} diff [hold number of days which is to be added or subtracted from current date]
+ * @returns {number}
+ */
+export function randomDate(diff) {
+	const d = new Date();
+	return d.setDate(d.getDate() + diff);
+}
+
+/**
+ * This function is used to sort all the campaigns according to timestamp and
+ * to divide into three categories (upcoming, live and past campaings)
+ *
+ * @param {Array} data [holds list of campaigns]
+ * @returns {object}
+ */
 export const formatData = data => {
 	data = data.sort((c1, c2) => {
-		return c1.startAt > c2.startAt;
+		return c1.startAt - c2.startAt;
 	});
 
 	const upcoming = [];
@@ -30,6 +58,12 @@ export const formatData = data => {
 	};
 };
 
+/**
+ * This function is used to get data.
+ *
+ * If data is not available in the localStorage then
+ * 	store hard coded data in the cache then return
+ */
 export const getData = () => {
 	let data = localStorage.get('campaigns-list');
 
@@ -41,6 +75,11 @@ export const getData = () => {
 	return formatData(campaignsData);
 };
 
+/**
+ * This function is used to update campaigns
+ *
+ * @param {object} campaign [holds campaign data which is to be updated]
+ */
 export const updateData = campaign => {
 	let data = localStorage.get('campaigns-list');
 
@@ -76,6 +115,11 @@ const MONTHS = [
 	'Dec',
 ];
 
+/**
+ * This function is used to return a formatted date for the UI.
+ *
+ * @param {timestamp} date [holds timestamp of the date]
+ */
 export const formatDate = date => {
 	const d = new Date(date);
 
@@ -90,12 +134,12 @@ export const formatDate = date => {
 export const formatDays = (startAt, endAt) => {
 	const d = new Date().valueOf();
 
-	if (startAt <= d && d <= endAt) {
-		return 'Live';
-	}
-
 	const diff = Math.abs(startAt - d);
 	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+	if (startAt <= d && d <= endAt) {
+		return `ends on ${formatDate(endAt)}`;
+	}
 
 	return d < startAt ? `${days} days ahead` : `${days} days ago`;
 };

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
+import 'react-datepicker/dist/react-datepicker.css';
 import './date-picker.scss';
 import Context from '../../../store/context';
+
+const DatePicker = React.lazy(() =>
+	import(/* webpackChunkName: "react-datepicker" */ 'react-datepicker')
+);
 
 const ReactDatePicker = props => {
 	const [showDatePicker, setShowDatePicker] = useState(false);
@@ -43,18 +46,22 @@ const ReactDatePicker = props => {
 								{props.children}
 							</div>
 
-							<DatePicker
-								selected={startAt}
-								open={showDatePicker}
-								onChange={(date, e) => {
-									toggleDatePicker(false);
-									updateCampaign({
-										...props.campaign,
-										startAt: new Date(date).valueOf(),
-									});
-								}}
-								onClickOutside={() => toggleDatePicker(false)}
-							/>
+							<React.Suspense fallback={<React.Fragment />}>
+								<DatePicker
+									selected={startAt}
+									open={showDatePicker}
+									onChange={(date, e) => {
+										toggleDatePicker(false);
+										updateCampaign({
+											...props.campaign,
+											startAt: new Date(date).valueOf(),
+										});
+									}}
+									onClickOutside={() =>
+										toggleDatePicker(false)
+									}
+								/>
+							</React.Suspense>
 						</React.Fragment>
 					);
 				}}
