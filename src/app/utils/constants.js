@@ -403,8 +403,8 @@ export const campaignsData = [
 		name: 'Fortnite Mobile',
 		region: 'US',
 		createdOn: 1559806680124,
-		startAt: randomDate(0),
-		endAt: randomDate(0),
+		startAt: randomDate(-4),
+		endAt: randomDate(3),
 		price: {
 			packages: [
 				{

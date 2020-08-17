@@ -75,9 +75,15 @@
 				justify-content: center;
 				text-align: center;
 				border: 2px solid #181b34;
-				width: 84px;
+				padding: 12px 18px;
 				height: 48px;
 				cursor: pointer;
+				&:hover {
+					background: #181b34;
+					.pricing-footer-text {
+						color: #fff;
+					}
+				}
 			}
 
 			.pricing-footer-text {
@@ -106,6 +112,14 @@
 					font-family: none;
 					font-size: 36px;
 				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 601px) {
+		.pricing-content {
+			.pricing-mob-btn {
+				display: none;
 			}
 		}
 	}

@@ -8,6 +8,7 @@ import Pricing from '../pricing';
 import Modal from '../../../shared/modal';
 import DatePicker from '../date-picker';
 import { formatDate, formatDays } from '../../utils/helpres';
+import { languages } from '../../utils/languages';
 
 import fileImage from '../../../resources/images/file.png';
 import reportImage from '../../../resources/images/report.png';
@@ -18,10 +19,12 @@ const Campaigns = props => {
 		<ErrorBoundary>
 			<Context.Consumer>
 				{context => {
-					const { modal, campaignsData = {} } = context;
+					const { modal, campaignsData = {}, languageType } = context;
 
 					const data =
 						campaignsData[props.location.pathname.replace('/', '')];
+
+					const language = languages[languageType];
 
 					return (
 						<React.Fragment>
@@ -30,13 +33,17 @@ const Campaigns = props => {
 							<div className='campaigns-container'>
 								<div className='campaigns-list-header'>
 									<div className='campaigns-list-item'>
-										<div className='item flex1'>DATE</div>
-										<div className='item flex2'>
-											CAMPAIGN
+										<div className='item flex1'>
+											{language['DATE']}
 										</div>
-										<div className='item flex3'>VIEW</div>
+										<div className='item flex2'>
+											{language['CAMPAIGN']}
+										</div>
+										<div className='item flex3'>
+											{language['VIEW']}
+										</div>
 										<div className='item flex4'>
-											ACTIONS
+											{language['ACTIONS']}
 										</div>
 									</div>
 								</div>
@@ -60,13 +67,15 @@ const Campaigns = props => {
 													<div className='campaign-date'>
 														<div className='camp-date'>
 															{formatDate(
-																startAt
+																startAt,
+																language
 															)}
 														</div>
 														<div className='camp-days'>
 															{formatDays(
 																startAt,
-																endAt
+																endAt,
+																language
 															)}
 														</div>
 													</div>
@@ -99,6 +108,9 @@ const Campaigns = props => {
 																children: (
 																	<Pricing
 																		{...campaign}
+																		language={
+																			language
+																		}
 																	/>
 																),
 															})
@@ -109,7 +121,11 @@ const Campaigns = props => {
 														</div>
 														<div className='price'>
 															<span>
-																View Pricing
+																{
+																	language[
+																		'View Pricing'
+																	]
+																}
 															</span>
 														</div>
 													</div>
@@ -122,7 +138,11 @@ const Campaigns = props => {
 																alt='file'
 															/>
 															<span className='text'>
-																CSV
+																{
+																	language[
+																		'CSV'
+																	]
+																}
 															</span>
 														</div>
 														<div className='campaign-report'>
@@ -133,7 +153,11 @@ const Campaigns = props => {
 																alt='file'
 															/>
 															<span className='text'>
-																Report
+																{
+																	language[
+																		'Report'
+																	]
+																}
 															</span>
 														</div>
 														<div className='campaign-schedule'>
@@ -149,8 +173,11 @@ const Campaigns = props => {
 																	alt='file'
 																/>
 																<span className='text'>
-																	Schedule
-																	Again
+																	{
+																		language[
+																			'Schedule Again'
+																		]
+																	}
 																</span>
 															</DatePicker>
 														</div>

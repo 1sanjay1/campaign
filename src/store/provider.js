@@ -10,6 +10,7 @@ class Provider extends React.Component {
 			children: null,
 		},
 		campaignsData: getData(),
+		languageType: 'english',
 	};
 
 	toggleModal = ({ show, children }) => {
@@ -25,6 +26,13 @@ class Provider extends React.Component {
 		});
 	};
 
+	setLanguage = languageType => {
+		this.setState({
+			...this.state,
+			languageType,
+		});
+	};
+
 	render() {
 		return (
 			<Context.Provider
@@ -35,6 +43,7 @@ class Provider extends React.Component {
 						toggle: this.toggleModal,
 					},
 					updateCampaign: this.updateCampaign,
+					setLanguage: this.setLanguage,
 				}}
 			>
 				{this.props.children}

@@ -120,7 +120,7 @@ const MONTHS = [
  *
  * @param {timestamp} date [holds timestamp of the date]
  */
-export const formatDate = date => {
+export const formatDate = (date, language) => {
 	const d = new Date(date);
 
 	const year = d.getFullYear();
@@ -128,18 +128,20 @@ export const formatDate = date => {
 
 	const day = d.getDate();
 
-	return `${month} ${year}, ${day}`;
+	return `${language[month]} ${[year]}, ${day}`;
 };
 
-export const formatDays = (startAt, endAt) => {
+export const formatDays = (startAt, endAt, language) => {
 	const d = new Date().valueOf();
 
 	const diff = Math.abs(startAt - d);
 	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
 	if (startAt <= d && d <= endAt) {
-		return `ends on ${formatDate(endAt)}`;
+		return `ends on ${formatDate(endAt, language)}`;
 	}
 
-	return d < startAt ? `${days} days ahead` : `${days} days ago`;
+	return d < startAt
+		? `${days} ${language['days ahead']}`
+		: `${days} ${language['days ago']}`;
 };

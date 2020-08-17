@@ -3,7 +3,7 @@ import React from 'react';
 import './pricing.scss';
 
 const Pricing = props => {
-	const { name, region, price = {}, image_url } = props;
+	const { name, region, price = {}, image_url, language } = props;
 	return (
 		<div className='pricing'>
 			<div className='pricing-content'>
@@ -17,12 +17,14 @@ const Pricing = props => {
 					</div>
 				</div>
 				<div className='pricing-body'>
-					<div className='pricing-text'>Pricing</div>
+					<div className='pricing-text'>{language['Pricing']}</div>
 					<div className='packages'>
 						{price.packages.map((p, idx) => {
 							return (
 								<div className='package' key={idx}>
-									<div className='duration'>{p.duration}</div>
+									<div className='duration'>
+										{language[p.duration]}
+									</div>
 									<div className='price'>{p.amount}</div>
 								</div>
 							);
@@ -31,7 +33,9 @@ const Pricing = props => {
 				</div>
 				<div className='pricing-footer'>
 					<div className='pricing-footer-btn close'>
-						<span className='pricing-footer-text close'>Close</span>
+						<span className='pricing-footer-text close'>
+							{language['Close']}
+						</span>
 					</div>
 				</div>
 
